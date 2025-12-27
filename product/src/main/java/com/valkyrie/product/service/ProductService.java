@@ -117,6 +117,7 @@ public class ProductService {
         if (exist) {
             pRepo.deleteById(productId);
             int val = iRepo.deleteProductImageById(productId);
+            
             exist = pRepo.existsById(productId);
 
             if (!exist && val > 0) {
